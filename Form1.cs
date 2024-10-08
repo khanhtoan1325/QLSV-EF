@@ -61,6 +61,16 @@ namespace lab4
             }
         }
         
+        private void loadDaTa()
+        {
+            using (Model2 model2 = new Model2())
+            {
+                List<Student> listStudent = model2.Students.ToList();
+                BindGrid (listStudent);
+            }
+        }
+
+
         private void ResetFom()
         {
             txtMa.Clear();
@@ -172,6 +182,10 @@ namespace lab4
                 dataGridView1.Rows[slecterRow].Cells[3].Value = txtDiem.Text;
                 MessageBox.Show("Cập nhật dữ liệu thành công !", "Thông Báo !", MessageBoxButtons.OK);
             } 
+            else
+            {
+                MessageBox.Show("Lỗi Không thể xóa","Thông Báo",MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }    
                 
         }
 

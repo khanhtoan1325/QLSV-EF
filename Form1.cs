@@ -10,6 +10,7 @@ using System.Linq;
 using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 using System.Windows.Forms;
 
 namespace lab4
@@ -98,7 +99,7 @@ namespace lab4
 
         private void cmbKhoa_SelectedIndexChanged(object sender, EventArgs e)
         {
-            cmbKhoa.SelectedIndex = 0;
+            string khoa = cmbKhoa.SelectedItem.ToString();
         }
         private int GetSelectedRow(string StudentID)
         {
@@ -126,7 +127,7 @@ namespace lab4
         {
             try
             {
-                if (txtDiem.Text == "" || txtTen.Text == "" || txtMa.Text == "")
+                if (txtDiem.Text == "" || txtTen.Text == "" || txtMa.Text == "" || cmbKhoa.Text == "")
                     throw new Exception("Vui lòng nhập đầy đủ thông tin sinh viên !");
                 int selectedRow = GetSelectedRow(txtMa.Text);
                 if (selectedRow == -1)

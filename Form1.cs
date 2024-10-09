@@ -8,6 +8,7 @@ using System.Data.Entity.Migrations;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.Remoting.Contexts;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web;
@@ -93,8 +94,18 @@ namespace lab4
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            var selectedStudent = dataGridView1.CurrentRow.DataBoundItem as Student;
+            if (selectedStudent != null)
+            {
+                txtMa.Text = selectedStudent.StudentID;
+                txtTen.Text = selectedStudent.StudentName;
+                cmbKhoa.SelectedValue = selectedStudent.FacultyID;
+                txtDiem.Text = selectedStudent.AverageScore.ToString();
 
-            
+
+                txtMa.ReadOnly = true;
+            }
+
         }
 
         private void cmbKhoa_SelectedIndexChanged(object sender, EventArgs e)
@@ -190,6 +201,17 @@ namespace lab4
                 
         }
 
-        
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var selectedStudent = dataGridView1.CurrentRow.DataBoundItem as Student;
+            if (selectedStudent != null)
+            {
+                txtMa.Text = selectedStudent.StudentID;
+                txtTen.Text = selectedStudent.StudentName;
+                cmbKhoa.SelectedValue = selectedStudent.FacultyID;
+                txtDiem.Text = selectedStudent.AverageScore.ToString();
+
+            }
+        }
     }
 }

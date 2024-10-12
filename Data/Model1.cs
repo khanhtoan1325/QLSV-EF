@@ -3,12 +3,12 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
 using System.Linq;
 
-namespace lab4.lab4
+namespace lab4.Data
 {
-    public partial class Model2 : DbContext
+    public partial class Model1 : DbContext
     {
-        public Model2()
-            : base("name=Model2")
+        public Model1()
+            : base("name=Model22")
         {
         }
 

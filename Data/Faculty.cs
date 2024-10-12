@@ -1,4 +1,4 @@
-namespace lab4.lab4
+namespace lab4.Data
 {
     using System;
     using System.Collections.Generic;

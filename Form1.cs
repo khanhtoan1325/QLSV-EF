@@ -1,5 +1,5 @@
-﻿using lab4.khanhtoan;
-using lab4.lab4;
+﻿
+using lab4.Data;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -51,9 +51,9 @@ namespace lab4
         {
             try
             {
-                Model2 model2 = new Model2();
-                List<Faculty> listFaculties = model2.Faculties.ToList();
-                List<Student> listStudents = model2.Students.ToList();
+                Model1 model1 = new Model1();
+                List<Faculty> listFaculties = model1.Faculties.ToList();
+                List<Student> listStudents = model1.Students.ToList();
                 FillFacultyCombobox(listFaculties);
                 BindGrid(listStudents);
             }
@@ -65,10 +65,10 @@ namespace lab4
         
         private void loadDaTa()
         {
-            using (Model2 model2 = new Model2())
+            using (Model1 model1 = new Model1())
             {
-                List<Student> listStudent = model2.Students.ToList();
-                BindGrid (listStudent);
+                List<Student> listStudent = model1.Students.ToList();
+                BindGrid(listStudent);
             }
         }
 
@@ -110,7 +110,7 @@ namespace lab4
 
         private void cmbKhoa_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string khoa = cmbKhoa.SelectedItem.ToString();
+            string Khoa = cmbKhoa.SelectedItem.ToString();
         }
         private int GetSelectedRow(string StudentID)
         {
@@ -190,7 +190,7 @@ namespace lab4
                 int slecterRow = dataGridView1.CurrentCell.RowIndex;
                 dataGridView1.Rows[slecterRow].Cells[0].Value = txtMa.Text;
                 dataGridView1.Rows[slecterRow].Cells[1].Value = txtTen.Text ;
-                dataGridView1.Rows[slecterRow].Cells[2].Value = cmbKhoa.SelectedItem+"";
+                dataGridView1.Rows[slecterRow].Cells[2].Value = cmbKhoa.SelectedItem.ToString();
                 dataGridView1.Rows[slecterRow].Cells[3].Value = txtDiem.Text;
                 MessageBox.Show("Cập nhật dữ liệu thành công !", "Thông Báo !", MessageBoxButtons.OK);
             } 

@@ -55,17 +55,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\Faculty.cs" />
+    <Compile Include="Data\Model1.cs" />
+    <Compile Include="Data\Student.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="khanhtoan\StudenDBContext.cs" />
-    <Compile Include="khanhtoan\sysdiagram.cs" />
-    <Compile Include="lab4\Faculty.cs" />
-    <Compile Include="lab4\Model2.cs" />
-    <Compile Include="lab4\Student.cs" />
     <Compile Include="Model1.cs" />
     <Compile Include="MSreplication_options.cs" />
     <Compile Include="Program.cs" />

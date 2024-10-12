@@ -5,9 +5,9 @@ using System.Linq;
 
 namespace lab4.Data
 {
-    public partial class Model1 : DbContext
+    public partial class Model2 : DbContext
     {
-        public Model1()
+        public Model2()
             : base("name=Model22")
         {
         }

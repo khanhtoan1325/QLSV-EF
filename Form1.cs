@@ -51,7 +51,7 @@ namespace lab4
         {
             try
             {
-                Model1 model1 = new Model1();
+                Model2 model1 = new Model2();
                 List<Faculty> listFaculties = model1.Faculties.ToList();
                 List<Student> listStudents = model1.Students.ToList();
                 FillFacultyCombobox(listFaculties);
@@ -65,7 +65,7 @@ namespace lab4
         
         private void loadDaTa()
         {
-            using (Model1 model1 = new Model1())
+            using (Model2 model1 = new Model2())
             {
                 List<Student> listStudent = model1.Students.ToList();
                 BindGrid(listStudent);
